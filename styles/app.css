@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --mandarine: #F7515C;
+    --black_light: #282A30;
+    --gray_light: rgba(40, 42, 48, 0.5);
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+    color: var(--black_light);;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+li {
+    margin-bottom: 25px;
+}
+
+.nav__title {
+    font-weight: 800;
+    font-size: 40px;
+}
+
+.nav__link {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    display: inline-block;
+	min-width: 150px;
+    text-align: center;
+	position: relative;
+    padding-bottom: 5px;
+}
+
+.nav__link:hover .nav__link_stroke:nth-child(2) {
+    stroke-dashoffset: 0;
+}
+
+.nav__image {
+    width: 18px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.button_mandarine {
+    color: white;
+    background-color: var(--mandarine);
+    padding: 25px 55px;
+    font-weight: 600;
+    transition: 0.35s ease-in-out
+}
+
+.button_mandarine:hover {
+    background: #cc424b;
+}
+
+.button_white {
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0px 4px 70px rgba(0, 0, 0, 0.226);
+    height: 58px;
+    width: 58px;
+}
+
+.nav__link_stroke {
+    display: block;
+    width: calc(100% - 40px);
+    height: 20px;
+    stroke: var(--mandarine);
+    position: absolute;
+    left: 20px;
+    bottom: -10px;
+    stroke-width: 4;
+}
+
+.nav__link_stroke:nth-child(2) {
+    stroke-dasharray: 650px;
+    stroke-dashoffset: 650px;
+    stroke: var(--black_light);
+    stroke-width: 5;
+    transition: stroke-dashoffset 800ms ease-out;
+}
+
+.text_outlined {
+    color: var(--mandarine);
+    font-weight: 700;
+    font-size: 100px;
+    text-shadow: 4px 10px 0px var(--black_light);
+    margin-left: -8px;
+}
+
+.text_gray {
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--gray_light);
+}
+
+.text_black {
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.card {
+    background-color: white;
+    box-shadow: 0px 4px 70px rgba(0, 0, 0, 0.123);
+    width: 450px;
+    height: 200px;
+    z-index: 2;
+}
+
+.card_round {
+    border-radius: 50%;
+    background-color: rgba(247, 81, 92, 0.05);
+    height: 51px;
+    width: 51px;
+}
+
+.card_number {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--mandarine);
+}
+
+.card_text_black {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.card_text_gray {
+    font-weight: 400;
+    font-size: 14px;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--gray_light);
+    margin-top: 10px;
+}
+
+.product_image {
+    width: 276px;
+    height: 310px;
+}
+
+.product_name {
+    margin-top: 44px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.product_price {
+    margin-top: 17px;
+    width: 700;
+    color: var(--gray_light);
+    text-align: center;
+}
+
+.footer__strip {
+    background-color: #282A30;
+    height: 2px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.footer__content {
+    margin: 100px 100px 70px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__link_black {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.footer__link_grey {
+    color: var(--gray_light);
+    font-size: 18px;
+    font-weight: 400;
+    transition: all .3s ease-in-out;
+}
+
+.footer__link_grey:hover {
+    color: var(--mandarine);
+}
+
+
+.grid-cols-20 {
+    grid-template-columns: repeat(20, minmax(0, 1fr));
+}
+
+.grid-rows-8 {
+    grid-template-rows: repeat(8, minmax(0, 80px));
+}
+
+.col-end-18 {
+    grid-column-end: 18;
+}
+  
+.row-start-8 {
+    grid-row-start: 8;
+}
+
+.wrapper {
+    background: linear-gradient(to right, var(--mandarine) 50%, var(--gray_light) 50%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 10s linear infinite;
+}
+
+@keyframes textclip {
+	to {
+		background-position: 200% center;
+	}
+}
